@@ -101,10 +101,17 @@ const OsintToolCard: React.FC<OsintToolCardProps> = ({ tool, isSingle = false })
       <div className="p-4 flex items-start space-x-4">
         <div className="flex-shrink-0">
           {tool.icon ? (
-            <img src={tool.icon} alt={`${tool.name} icon`} className="w-10 h-10 rounded" />
+            <div className="w-12 h-12 rounded-lg bg-muted/50 p-2 flex items-center justify-center border border-border/50">
+              <img 
+                src={tool.icon} 
+                alt={`${tool.name} icon`} 
+                className="w-full h-full object-contain rounded"
+                style={{ maxWidth: '40px', maxHeight: '40px' }}
+              />
+            </div>
           ) : (
-            <div className="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded flex items-center justify-center">
-              <LinkIcon className="w-5 h-5 text-gray-500 dark:text-gray-400" />
+            <div className="w-12 h-12 bg-muted rounded-lg flex items-center justify-center border border-border/50">
+              <LinkIcon className="w-6 h-6 text-muted-foreground" />
             </div>
           )}
         </div>
@@ -513,7 +520,7 @@ export default function DomainToolsAndArticle() {
                   <ul>
                     <li>Certificate transparency logs, like crt.sh. When a website is registered, it has to be issued a SSL certificate by a Certificate Authority, and this certificate is recorded in a log. This way, you can retrieve subdomains from the logs. If you want to avoid your domains to be recorded I recommand you to use a wildcard certificate.</li>
                     <ArticleImage
-                      src="/images/domain/crtsh_example.png"
+                      src="/images/domain/crtsh_hippie_cat.png"
                       alt="crt.sh example"
                       width={800}
                       height={400}

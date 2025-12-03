@@ -78,28 +78,32 @@ const renderTool = () => {
         return <DiscordTools />
       default:
         return (
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-950/30 dark:to-indigo-950/30 rounded-2xl p-8 mb-8 text-center shadow-sm">
-              <img
-                src="/osint-toolkit.png"
-                alt="0S1NT-M4ST3R Logo"
-                className="w-32 h-32 mx-auto mb-6 drop-shadow-md"
-              />
-              <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-400 dark:to-indigo-400">
+          <div className="max-w-5xl mx-auto">
+            <div className="bg-gradient-to-br from-card via-card to-card/80 backdrop-blur-sm rounded-2xl p-10 mb-10 text-center shadow-2xl border border-border/50">
+              <div className="w-40 h-40 mx-auto mb-8 flex items-center justify-center">
+                <img
+                  src="/osint-toolkit.png"
+                  alt="0S1NT-M4ST3R Logo"
+                  className="w-full h-full object-contain drop-shadow-2xl"
+                  style={{ maxWidth: '160px', maxHeight: '160px' }}
+                />
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-5 bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-500 to-indigo-500 tracking-tight">
                 Welcome to 0S1NT-M4ST3R
               </h2>
-              <p className="text-gray-700 dark:text-gray-300 mb-4 max-w-2xl mx-auto">
+              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto text-lg leading-relaxed">
                 A collection of carefully selected OSINT tools for investigations and CTFs, all in one place.
               </p>
-              <div className="flex justify-center gap-3 mt-6">
+              <div className="flex justify-center gap-4 mt-8">
                 <Button
                   onClick={() => selectTool("domain")}
-                  className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700"
+                  size="lg"
+                  className="bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 shadow-lg hover:shadow-xl"
                 >
                   <Search className="mr-2 h-4 w-4" />
                   Start Exploring
                 </Button>
-                <Button variant="outline" asChild>
+                <Button variant="outline" size="lg" asChild>
                   <a
                     href="https://github.com/TR4SC3ND3NT/0S1NT-M4ST3R.git"
                     target="_blank"
@@ -113,78 +117,78 @@ const renderTool = () => {
               </div>
             </div>
 
-              <div className="mb-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="mb-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {mainTools.map((tool) => (
                   <div
                     key={tool.tool}
-                    className="bg-gray-100 dark:bg-gray-800/80 rounded-xl p-6 shadow-sm hover:shadow-md transition-all cursor-pointer border border-gray-200 dark:border-gray-700 hover:border-purple-200 dark:hover:border-purple-800/50"
+                    className="bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border border-border/50 hover:border-primary/30 group"
                     onClick={() => selectTool(tool.tool)}
                   >
-                    <div className="flex items-center mb-3">
-                      <div className="bg-white dark:bg-gray-900 p-2 rounded-lg mr-3 shadow-sm">
-                        <tool.icon className="h-5 w-5 text-purple-600 dark:text-purple-400" />
+                    <div className="flex items-center mb-4">
+                      <div className="bg-primary/10 group-hover:bg-primary/20 p-3 rounded-lg mr-4 transition-colors duration-300">
+                        <tool.icon className="h-6 w-6 text-primary" />
                       </div>
-                      <h3 className="font-semibold text-lg">{tool.name}</h3>
+                      <h3 className="font-semibold text-lg text-foreground">{tool.name}</h3>
                     </div>
-                    <p className="text-gray-700 dark:text-gray-300 text-sm">{tool.description}</p>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{tool.description}</p>
                   </div>
                 ))}
               </div>
 
-              <h3 className="text-xl font-semibold mt-8 mb-4 flex items-center text-gray-800 dark:text-gray-200">
-                <Users className="mr-2 h-5 w-5 text-purple-600 dark:text-purple-400" />
+              <h3 className="text-2xl font-semibold mt-10 mb-6 flex items-center text-foreground">
+                <Users className="mr-3 h-6 w-6 text-primary" />
                 Social Networks
               </h3>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {socialTools.map((tool) => (
                   <div
                     key={tool.tool}
-                    className="bg-gray-100 dark:bg-gray-800/80 rounded-xl p-6 shadow-sm hover:shadow-md transition-all cursor-pointer border border-gray-200 dark:border-gray-700 hover:border-purple-200 dark:hover:border-purple-800/50"
+                    className="bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border border-border/50 hover:border-primary/30 group"
                     onClick={() => selectTool(tool.tool)}
                   >
-                    <div className="flex items-center mb-3">
-                      <div className="bg-white dark:bg-gray-900 p-2 rounded-lg mr-3 shadow-sm">
-                        <tool.icon className="h-5 w-5 text-purple-600 dark:text-purple-400" />
+                    <div className="flex items-center mb-4">
+                      <div className="bg-primary/10 group-hover:bg-primary/20 p-3 rounded-lg mr-4 transition-colors duration-300">
+                        <tool.icon className="h-6 w-6 text-primary" />
                       </div>
-                      <h3 className="font-semibold text-lg">{tool.name}</h3>
+                      <h3 className="font-semibold text-lg text-foreground">{tool.name}</h3>
                     </div>
-                    <p className="text-gray-700 dark:text-gray-300 text-sm">{tool.description}</p>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{tool.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-700">
-              <h3 className="text-xl font-semibold mb-4 flex items-center">
-                <Sparkles className="mr-2 h-5 w-5 text-purple-600 dark:text-purple-400" />
+            <div className="bg-card rounded-xl p-8 shadow-lg border border-border/50">
+              <h3 className="text-2xl font-semibold mb-6 flex items-center text-foreground">
+                <Sparkles className="mr-3 h-6 w-6 text-primary" />
                 About This Project
               </h3>
-              <div className="space-y-4 text-gray-700 dark:text-gray-300">
-                <p>
+              <div className="space-y-5 text-muted-foreground leading-relaxed">
+                <p className="text-base">
                   I have developed this website to share my knowledge in OSINT and provide everyone with access to a
                   practical toolkit, especially useful for CTFs or investigations, without the need to install all the
                   tools for quick searches.
                 </p>
-                <p>
+                <p className="text-base">
                   I've carefully selected the tools that I personally find most useful and relevant. However, I had to
                   make some compromises and couldn't implement everything, as some tools require a complex setup if made
                   publicly accessible (such as IP rotation, sock puppets, etc.).
                 </p>
-                <p>
+                <p className="text-base">
                   If you would like to add a tool, provide additional information, or correct any errors, please feel
                   free to contribute to the project on GitHub.
                 </p>
-                <div className="pt-2 text-center">
+                <div className="pt-4 text-center">
                   <a
                     href="https://github.com/TR4SC3ND3NT/0S1NT-M4ST3R.git"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 font-medium"
+                    className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors"
                   >
                     Contribute to the project
-                    <ExternalLink className="ml-1 h-4 w-4" />
+                    <ExternalLink className="ml-2 h-4 w-4" />
                   </a>
                 </div>
               </div>
@@ -221,9 +225,9 @@ const renderTool = () => {
 
   return (
     <TooltipProvider>
-      <div className="flex flex-col h-screen bg-gray-50 dark:bg-gray-950 transition-all duration-300">
+      <div className="flex flex-col h-screen bg-background transition-all duration-300">
         {/* Header */}
-        <header className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 px-4 py-3 flex justify-between items-center transition-all duration-300 sticky top-0 z-30">
+        <header className="bg-card/80 backdrop-blur-md border-b border-border/50 px-6 py-4 flex justify-between items-center transition-all duration-300 sticky top-0 z-30 shadow-sm">
           <div className="flex items-center">
             <Button variant="ghost" size="icon" className="mr-2 md:hidden" onClick={toggleSidebar}>
               {isSidebarOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -231,7 +235,7 @@ const renderTool = () => {
               <a
                 href="/"
                 onClick={handleTitleClick}
-                className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-400 dark:to-indigo-400 hover:opacity-90 transition-all duration-300"
+                className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-500 to-indigo-500 hover:opacity-90 transition-all duration-300 tracking-tight"
               >
                 0S1NT-M4ST3R
               </a>
@@ -286,7 +290,7 @@ const renderTool = () => {
           {/* Mobile sidebar overlay */}
           {isSidebarOpen && (
             <div
-              className="fixed inset-0 bg-black/20 dark:bg-black/50 z-20 md:hidden"
+              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-20 md:hidden"
               onClick={() => setIsSidebarOpen(false)}
             />
           )}
@@ -294,9 +298,9 @@ const renderTool = () => {
           {/* Sidebar */}
           <aside
             className={cn(
-              "bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 w-64 fixed md:relative inset-y-0 left-0 transform",
+              "bg-card/95 backdrop-blur-md border-r border-border/50 w-64 fixed md:relative inset-y-0 left-0 transform",
               isSidebarOpen ? "translate-x-0" : "-translate-x-full",
-              "md:translate-x-0 transition-transform duration-300 ease-in-out z-40 md:z-10 pt-0 mt-0 top-[57px] md:top-0 h-[calc(100vh-57px)] overflow-y-auto",
+              "md:translate-x-0 transition-transform duration-300 ease-in-out z-40 md:z-10 pt-0 mt-0 top-[65px] md:top-0 h-[calc(100vh-65px)] overflow-y-auto shadow-lg",
             )}
           >
             <nav className="p-4">
@@ -321,7 +325,7 @@ const renderTool = () => {
               </div>
 
               <div>
-                <h3 className="text-xs uppercase font-semibold text-gray-500 dark:text-gray-400 mb-2 px-3">
+                <h3 className="text-xs uppercase font-semibold text-muted-foreground mb-3 px-3 tracking-wider">
                   Social Networks
                 </h3>
                 <div className="space-y-1">
@@ -345,15 +349,15 @@ const renderTool = () => {
                 </div>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-800">
+              <div className="mt-8 pt-6 border-t border-border/50">
                 <div className="px-3 py-2">
-                  <p className="text-xs text-gray-500 dark:text-gray-400">
+                  <p className="text-xs text-muted-foreground">
                     By{" "}
                     <a
                       href="https://t.me/Werfauster"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-purple-600 dark:text-purple-400 hover:underline"
+                      className="text-primary hover:text-primary/80 hover:underline transition-colors"
                     >
                       @WerFauster
                     </a>
@@ -364,7 +368,7 @@ const renderTool = () => {
           </aside>
 
           {/* Main content */}
-          <main className="flex-1 p-4 md:p-6 overflow-auto bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-all duration-300">
+          <main className="flex-1 p-6 md:p-8 overflow-auto bg-background text-foreground transition-all duration-300">
             {renderTool()}
           </main>
         </div>

@@ -27,6 +27,8 @@ Modify the `docker-compose.yml` file to add your GHunt base64 token (if you want
 optionally, you can modify the `NEXT_PUBLIC_BACKEND_API` variable to run the backend on a remote server.
 
 ```bash
+git clone https://github.com/TR4SC3ND3NT/0S1NT-M4ST3R.git
+cd 0S1NT-M4ST3R
 docker compose up
 ```
 

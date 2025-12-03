@@ -91,10 +91,17 @@ const OsintToolCard: React.FC<OsintToolCardProps> = ({ tool, isSingle = false })
       <div className="p-4 flex items-start space-x-4">
         <div className="flex-shrink-0">
           {tool.icon ? (
-            <img src={tool.icon || "/placeholder.svg"} alt={`${tool.name} icon`} className="w-10 h-10 rounded" />
+            <div className="w-12 h-12 rounded-lg bg-muted/50 p-2 flex items-center justify-center border border-border/50">
+              <img 
+                src={tool.icon || "/placeholder.svg"} 
+                alt={`${tool.name} icon`} 
+                className="w-full h-full object-contain rounded"
+                style={{ maxWidth: '40px', maxHeight: '40px' }}
+              />
+            </div>
           ) : (
-            <div className="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded flex items-center justify-center">
-              <LinkIcon className="w-5 h-5 text-gray-500 dark:text-gray-400" />
+            <div className="w-12 h-12 bg-muted rounded-lg flex items-center justify-center border border-border/50">
+              <LinkIcon className="w-6 h-6 text-muted-foreground" />
             </div>
           )}
         </div>

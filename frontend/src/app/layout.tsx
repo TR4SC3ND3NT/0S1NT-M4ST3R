@@ -22,11 +22,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+        <link rel="icon" type="image/png" href="/osint-toolkit.png" sizes="any" />
+        <link rel="icon" type="image/png" href="/osint-toolkit.png" sizes="96x96" />
+        <link rel="icon" type="image/png" href="/osint-toolkit.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="/osint-toolkit.png" sizes="16x16" />
+        <link rel="shortcut icon" href="/osint-toolkit.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/osint-toolkit.png" />
+        <meta name="apple-mobile-web-app-title" content="0S1NT-M4ST3R" />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body className={cn(
