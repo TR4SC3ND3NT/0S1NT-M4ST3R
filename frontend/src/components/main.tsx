@@ -85,7 +85,7 @@ const renderTool = () => {
                   src="/osint-toolkit.png"
                   alt="0S1NT-M4ST3R Logo"
                   className="w-full h-full object-contain drop-shadow-2xl"
-                  style={{ maxWidth: '160px', maxHeight: '160px' }}
+                  style={{ maxWidth: '500px', maxHeight: '500px' }}
                 />
               </div>
               <h2 className="text-4xl md:text-5xl font-bold mb-5 bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-500 to-indigo-500 tracking-tight">
