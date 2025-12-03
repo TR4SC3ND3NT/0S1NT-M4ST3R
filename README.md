@@ -5,6 +5,28 @@
 
 I created this project to gather in the same place knowledge I learnt in OSINT, to share it and gives access to everyone. This project is a mix between short articles and tools that I use/like. Everything is integrated in a web UI and with tools running on the backend, you can host it on your server and use it from anywhere.
 
+## Tech stack
+
+### Frontend
+- **Next.js** (React + TypeScript)
+- Современный тёмный UI (Tailwind-подобные утилиты, кастомные компоненты)
+- Компоненты на базе Radix UI (`@radix-ui/react-separator` и др.)
+- `react-syntax-highlighter` для подсветки кода в некоторых инструментах
+- WebSocket / Socket.io клиент для живых обновлений
+
+### Backend
+- **Python 3**
+- FastAPI / ASGI-приложение (запуск через `uvicorn app:app`)
+- Интеграции с внешними OSINT-сервисами (домен, IP, email, username и т.д.)
+- Асинхронные запросы к API, обработка результатов и отдача их фронту
+
+### Infrastructure
+- **Docker** для локального запуска
+- `docker-compose` для dev-окружения (отдельно фронт + бэк)
+- Root-`Dockerfile` для деплоя на **Railway**
+- Переменные окружения для ключей к API и базы данных (`DATABASE_URL` и др.)
+
+
 ## Features
 
 Different tools are available in the UI giving you access to these features:
