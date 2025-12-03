@@ -154,7 +154,7 @@ export default function GitHubTools() {
       name: 'Osgint', 
       url: 'https://github.com/hippiiee/osgint', 
       description: 'Find information about a GitHub user',
-      icon: 'https://github.com/hippiiee.png'
+      icon: 'https://github.com/favicon.ico'
     },
     { 
       name: 'TruffleHog', 
@@ -288,7 +288,7 @@ export default function GitHubTools() {
               Osgint
               <ExternalLink className="ml-1 h-3 w-3" />
             </a>
-            , created by hippiiee.
+            .
           </p>
         </CardContent>
       </Card>
@@ -418,27 +418,6 @@ export default function GitHubTools() {
                   <li>Use GitHub's email privacy settings to hide your email address</li>
                   <li>Use a separate email for GitHub contributions</li>
                 </ul>
-
-                <h3 id="commit-spoofing">Commit Spoofing for Profile Retrieval</h3>
-                <p>It's possible to spoof commits to retrieve any GitHub profile associated with an email address. You can have more information about this technique in this challenge Writeup : <a href="https://hippie.cat/post/Writeup/EsaipCTF-2022/the-proof-of-the-malware-author" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">EsaipCTF 2022 - the-proof-of-the-malware-author</a></p>
-                <p>This works because of Git's fundamental design:</p>
-                <ul>
-                  <li>Git allows users to set any name and email for commits</li>
-                  <li>GitHub associates commits with profiles based on the email used</li>
-                </ul>
-                <ArticleImage
-                  src="/images/github/git-config-email.png"
-                  alt="git config --global user.email"
-                  width={800}
-                  height={400}
-                />
-                <ArticleImage
-                  src="/images/github/github-account-spoofed.png"
-                  alt="GitHub account spoofing"
-                  width={800}
-                  height={400}
-                />
-                <p>This behavior is inherent to Git's distributed nature, making it challenging for GitHub to prevent without altering Git's core functionality.</p>
 
                 <h3 id="github-api">Utilizing GitHub API for Email Retrieval</h3>
                 <p>GitHub's API can be leveraged to gather email addresses associated with users and repositories. Some methods include:</p>

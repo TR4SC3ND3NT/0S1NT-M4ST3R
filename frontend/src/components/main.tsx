@@ -27,7 +27,7 @@ interface ToolItem {
   description: string
 }
 
-export default function HippieOSINTToolkit() {
+export default function OSINTToolkit() {
   const [selectedTool, setSelectedTool] = useState<string | null>(null)
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
@@ -81,7 +81,7 @@ const renderTool = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-950/30 dark:to-indigo-950/30 rounded-2xl p-8 mb-8 text-center shadow-sm">
               <img
-                src="/hippie-osint-toolkit.png"
+                src="/osint-toolkit.png"
                 alt="0S1NT-M4ST3R Logo"
                 className="w-32 h-32 mx-auto mb-6 drop-shadow-md"
               />

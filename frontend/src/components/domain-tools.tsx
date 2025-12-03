@@ -414,7 +414,7 @@ export default function DomainToolsAndArticle() {
                 </p>
                 <ArticleImage
                   src="/images/domain/internet_archive.png"
-                  alt="Wayback machine on domain hippie.cat"
+                  alt="Wayback Machine example"
                   width={800}
                   height={400}
                 />
@@ -511,10 +511,10 @@ export default function DomainToolsAndArticle() {
                   Subdomain enumeration is a wide topic, a lot of tools and techniques exists (if you want to only retrieve subdomains using OSINT techniques, be careful with the tool you use).
                   You can retrieve subdomains using :
                   <ul>
-                    <li>Certificate transparency logs, like crt.sh. When a website is registered, it has to be issued a SSL certificate by a Certificate Authority, and this certificate is recorded in a log. This way, you can retrieve subdomains from the logs. If you want to avoid your domains to be recorded I recommand you to use a wildcard certificate (such as *.hippie.cat).</li>
+                    <li>Certificate transparency logs, like crt.sh. When a website is registered, it has to be issued a SSL certificate by a Certificate Authority, and this certificate is recorded in a log. This way, you can retrieve subdomains from the logs. If you want to avoid your domains to be recorded I recommand you to use a wildcard certificate.</li>
                     <ArticleImage
-                      src="/images/domain/crtsh_hippie_cat.png"
-                      alt="crt.sh hippie.cat"
+                      src="/images/domain/crtsh_example.png"
+                      alt="crt.sh example"
                       width={800}
                       height={400}
                     />
