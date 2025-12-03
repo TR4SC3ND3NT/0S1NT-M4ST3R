@@ -1,14 +1,9 @@
 # 0S1NT-M4ST3R
 <p align="center">
   An OSINT toolkit providing informations on techniques and simple tools packaged in a nice responsive UI.
-  <br>
-  <a href="https://t.me/Werfauster" title="Follow"><img src="https://img.shields.io/twitter/follow/hiippiiie?label=hiippiiie&style=social"></a>
-  <br>
 </p>
 
 I created this project to gather in the same place knowledge I learnt in OSINT, to share it and gives access to everyone. This project is a mix between short articles and tools that I use/like. Everything is integrated in a web UI and with tools running on the backend, you can host it on your server and use it from anywhere.
-
-![homepage](./.github/homepage.png)
 
 ## Features
 
