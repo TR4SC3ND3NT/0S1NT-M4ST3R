@@ -1,4 +1,4 @@
-import OSINTToolkit from '@/components/main'
+import OSINTToolkit from "@/components/main"
 
 export default function Home() {
   return <OSINTToolkit />

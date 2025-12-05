@@ -3,7 +3,19 @@
 import type React from "react"
 
 import { useState, useEffect } from "react"
-import { Globe, ImageIcon, Users, Menu, X, Moon, Sun, Github, Search, ExternalLink, Sparkles } from "lucide-react"
+import {
+  Globe,
+  ImageIcon,
+  Users,
+  Menu,
+  X,
+  Moon,
+  Sun,
+  Github,
+  Search,
+  ExternalLink,
+  Sparkles,
+} from "lucide-react"
 import { FaGithub, FaTiktok, FaGoogle, FaDiscord } from "react-icons/fa"
 import ImageSearch from "./image-search"
 import DomainTools from "./domain-tools"
@@ -12,13 +24,19 @@ import TikTokTools from "./social_media/tiktok"
 import GoogleTools from "./social_media/google"
 import DiscordTools from "./social_media/discord"
 import { Button } from "@/components/ui/button"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
 import UsernameSearch from "./username/username"
 import { useTheme } from "next-themes"
 import { useRouter } from "next/navigation"
 import { cn } from "@/lib/utils"
+import AuthBar from "@/components/auth/AuthBar"
 
 interface ToolItem {
   name: string
@@ -49,18 +67,48 @@ export default function OSINTToolkit() {
       tool: "tiktok",
       description: "Find video upload timestamps and user information",
     },
-    { name: "Google", icon: FaGoogle, tool: "google", description: "Search Google account user information" },
-    { name: "GitHub", icon: FaGithub, tool: "github", description: "Discover GitHub user information" },
-    { name: "Discord", icon: FaDiscord, tool: "discord", description: "Discord user information" },
+    {
+      name: "Google",
+      icon: FaGoogle,
+      tool: "google",
+      description: "Search Google account user information",
+    },
+    {
+      name: "GitHub",
+      icon: FaGithub,
+      tool: "github",
+      description: "Discover GitHub user information",
+    },
+    {
+      name: "Discord",
+      icon: FaDiscord,
+      tool: "discord",
+      description: "Discord user information",
+    },
   ]
 
   const mainTools = [
-    { name: "Domain", icon: Globe, tool: "domain", description: "Analyze domains and subdomains" },
-    { name: "Image", icon: ImageIcon, tool: "image", description: "Reverse image search and analysis" },
-    { name: "Username", icon: Users, tool: "username", description: "Search usernames across platforms" },
+    {
+      name: "Domain",
+      icon: Globe,
+      tool: "domain",
+      description: "Analyze domains and subdomains",
+    },
+    {
+      name: "Image",
+      icon: ImageIcon,
+      tool: "image",
+      description: "Reverse image search and analysis",
+    },
+    {
+      name: "Username",
+      icon: Users,
+      tool: "username",
+      description: "Search usernames across platforms",
+    },
   ]
 
-const renderTool = () => {
+  const renderTool = () => {
     switch (selectedTool) {
       case "domain":
         return <DomainTools />
@@ -85,14 +133,15 @@ const renderTool = () => {
                   src="/osint-toolkit.png"
                   alt="0S1NT-M4ST3R Logo"
                   className="w-full h-full object-contain drop-shadow-2xl"
-                  style={{ maxWidth: '500px', maxHeight: '500px' }}
+                  style={{ maxWidth: "500px", maxHeight: "500px" }}
                 />
               </div>
               <h2 className="text-4xl md:text-5xl font-bold mb-5 bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-500 to-indigo-500 tracking-tight">
                 Welcome to 0S1NT-M4ST3R
               </h2>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto text-lg leading-relaxed">
-                A collection of carefully selected OSINT tools for investigations and CTFs, all in one place.
+                A collection of carefully selected OSINT tools for investigations
+                and CTFs, all in one place.
               </p>
               <div className="flex justify-center gap-4 mt-8">
                 <Button
@@ -117,7 +166,7 @@ const renderTool = () => {
               </div>
             </div>
 
-              <div className="mb-10">
+            <div className="mb-10">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {mainTools.map((tool) => (
                   <div
@@ -129,9 +178,13 @@ const renderTool = () => {
                       <div className="bg-primary/10 group-hover:bg-primary/20 p-3 rounded-lg mr-4 transition-colors duration-300">
                         <tool.icon className="h-6 w-6 text-primary" />
                       </div>
-                      <h3 className="font-semibold text-lg text-foreground">{tool.name}</h3>
+                      <h3 className="font-semibold text-lg text-foreground">
+                        {tool.name}
+                      </h3>
                     </div>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{tool.description}</p>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {tool.description}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -152,9 +205,13 @@ const renderTool = () => {
                       <div className="bg-primary/10 group-hover:bg-primary/20 p-3 rounded-lg mr-4 transition-colors duration-300">
                         <tool.icon className="h-6 w-6 text-primary" />
                       </div>
-                      <h3 className="font-semibold text-lg text-foreground">{tool.name}</h3>
+                      <h3 className="font-semibold text-lg text-foreground">
+                        {tool.name}
+                      </h3>
                     </div>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{tool.description}</p>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {tool.description}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -167,18 +224,22 @@ const renderTool = () => {
               </h3>
               <div className="space-y-5 text-muted-foreground leading-relaxed">
                 <p className="text-base">
-                  I have developed this website to share my knowledge in OSINT and provide everyone with access to a
-                  practical toolkit, especially useful for CTFs or investigations, without the need to install all the
-                  tools for quick searches.
+                  I have developed this website to share my knowledge in OSINT
+                  and provide everyone with access to a practical toolkit,
+                  especially useful for CTFs or investigations, without the need
+                  to install all the tools for quick searches.
                 </p>
                 <p className="text-base">
-                  I've carefully selected the tools that I personally find most useful and relevant. However, I had to
-                  make some compromises and couldn't implement everything, as some tools require a complex setup if made
-                  publicly accessible (such as IP rotation, sock puppets, etc.).
+                  I&apos;ve carefully selected the tools that I personally find
+                  most useful and relevant. However, I had to make some
+                  compromises and couldn&apos;t implement everything, as some
+                  tools require a complex setup if made publicly accessible
+                  (such as IP rotation, sock puppets, etc.).
                 </p>
                 <p className="text-base">
-                  If you would like to add a tool, provide additional information, or correct any errors, please feel
-                  free to contribute to the project on GitHub.
+                  If you would like to add a tool, provide additional
+                  information, or correct any errors, please feel free to
+                  contribute to the project on GitHub.
                 </p>
                 <div className="pt-4 text-center">
                   <a
@@ -229,26 +290,39 @@ const renderTool = () => {
         {/* Header */}
         <header className="bg-card/80 backdrop-blur-md border-b border-border/50 px-6 py-4 flex justify-between items-center transition-all duration-300 sticky top-0 z-30 shadow-sm">
           <div className="flex items-center">
-            <Button variant="ghost" size="icon" className="mr-2 md:hidden" onClick={toggleSidebar}>
-              {isSidebarOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="mr-2 md:hidden"
+              onClick={toggleSidebar}
+            >
+              {isSidebarOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </Button>
-              <a
-                href="/"
-                onClick={handleTitleClick}
-                className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-500 to-indigo-500 hover:opacity-90 transition-all duration-300 tracking-tight"
-              >
-                0S1NT-M4ST3R
-              </a>
+            <a
+              href="/"
+              onClick={handleTitleClick}
+              className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-500 to-indigo-500 hover:opacity-90 transition-all duration-300 tracking-tight"
+            >
+              0S1NT-M4ST3R
+            </a>
             {selectedTool && (
               <div className="hidden md:flex items-center ml-4">
                 <Separator orientation="vertical" className="h-6 mx-2" />
                 <Badge variant="secondary" className="text-xs font-normal">
-                  {selectedTool.charAt(0).toUpperCase() + selectedTool.slice(1)}
+                  {selectedTool.charAt(0).toUpperCase() +
+                    selectedTool.slice(1)}
                 </Badge>
               </div>
             )}
           </div>
           <div className="flex items-center space-x-2">
+            {/* ←←← ВОТ ТУТ ДОБАВЛЕНА ПАНЕЛЬ ЛОГИН/РЕГИСТРАЦИЯ/ВЫХОД */}
+            <AuthBar />
+
             <Tooltip>
               <TooltipTrigger asChild>
                 <Button
@@ -258,7 +332,11 @@ const renderTool = () => {
                   aria-label="Toggle theme"
                   className="transition-all duration-300"
                 >
-                  {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+                  {theme === "dark" ? (
+                    <Sun className="h-5 w-5" />
+                  ) : (
+                    <Moon className="h-5 w-5" />
+                  )}
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
@@ -309,7 +387,9 @@ const renderTool = () => {
                   <Tooltip key={tool.tool}>
                     <TooltipTrigger asChild>
                       <Button
-                        variant={selectedTool === tool.tool ? "secondary" : "ghost"}
+                        variant={
+                          selectedTool === tool.tool ? "secondary" : "ghost"
+                        }
                         className="w-full justify-start mb-1 font-normal"
                         onClick={() => selectTool(tool.tool)}
                       >
@@ -333,7 +413,9 @@ const renderTool = () => {
                     <Tooltip key={tool.tool}>
                       <TooltipTrigger asChild>
                         <Button
-                          variant={selectedTool === tool.tool ? "secondary" : "ghost"}
+                          variant={
+                            selectedTool === tool.tool ? "secondary" : "ghost"
+                          }
                           className="w-full justify-start mb-1 font-normal"
                           onClick={() => selectTool(tool.tool)}
                         >
@@ -376,4 +458,3 @@ const renderTool = () => {
     </TooltipProvider>
   )
 }
-
